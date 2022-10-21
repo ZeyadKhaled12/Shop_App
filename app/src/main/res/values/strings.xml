@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">ShoeAppStoreKotlin</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email_txt">Email</string>
+    <string name="password_txt">Password</string>
+    <string name="login_btn">Login</string>
+    <string name="welcome">Welcome</string>
+    <string name="welcome_msg">Welcome to our shoe store app, we working in your service as  we can, we hope you find your order her, Enjoy th app.</string>
+    <string name="next_txt">Next</string>
+    <string name="instructions">Instructions</string>
+    <string name="instruction_text1">1- Click on floating button to add new shoe.</string>
+    <string name="instruction_text2">2- Click save button to save the new shoe and cancel to cancel it.</string>
+    <string name="shoe_name_label">Shoe Name</string>
+    <string name="company">Company</string>
+    <string name="shoe_size">Shoe Size</string>
+    <string name="description">Description</string>
+    <string name="shoe_detail">Shoe Detail</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="shoe_list">Shoe List</string>
+    <string name="login">Login</string>
+    <string name="log_out">Logout</string>
+
+</resources>
