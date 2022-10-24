@@ -38,15 +38,6 @@ class ShoeDetailFragment : Fragment() {
                     "shoe_size" to binding.shoeSizeField.text.toString(),
                     "description" to binding.descriptionField.text.toString()
                 )
-                /*
-                mapOf(
-                    "shoe_name" to "kofta",
-                    "company" to "adidas",
-                    "shoe_size" to "40",
-                    "description" to "this is  goodone"
-                )
-
-                 */
             )
             Navigation.findNavController(it).navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
         }

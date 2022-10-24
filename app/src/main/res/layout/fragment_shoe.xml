@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--I used LinearLayout because it is
+simple widget that i will used to add new shoe in shor list-->
+
 <layout>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
