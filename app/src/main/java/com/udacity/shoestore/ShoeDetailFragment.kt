@@ -10,10 +10,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.udacity.shoestore.ShoeList.ShoeListModel
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
+import com.udacity.shoestore.models.Shoe
 import kotlinx.android.synthetic.main.fragment_shoe_detail.view.*
 
 class ShoeDetailFragment : Fragment() {
+
     private lateinit var viewModel: ShoeListModel
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,15 +34,10 @@ class ShoeDetailFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(ShoeListModel::class.java)
 
+        binding.shoe = Shoe()
+
         binding.saveButton.setOnClickListener {
-            viewModel.addShoe(
-                mapOf(
-                    "shoe_name" to binding.shoeNameField.text.toString(),
-                    "company" to binding.companyField.text.toString(),
-                    "shoe_size" to binding.shoeSizeField.text.toString(),
-                    "description" to binding.descriptionField.text.toString()
-                )
-            )
+            viewModel.addShoe(viewModel.shoe)
             Navigation.findNavController(it).navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
         }
 

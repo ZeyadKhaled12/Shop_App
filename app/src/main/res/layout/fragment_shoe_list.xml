@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--I used RelativeLayout to add floatingactionbutton ,textview and scroll view-->
+<!--I used ConstraintLayout to add floatingactionbutton in bottom, textview and scroll view, and it was complex screen-->
 
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -8,7 +8,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ShoeList.ShoeListFragment">
 
-   <RelativeLayout
+   <androidx.constraintlayout.widget.ConstraintLayout
        android:layout_width="match_parent"
        android:layout_height="match_parent">
 
@@ -17,12 +17,13 @@
           android:id="@+id/textView2"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:fontFamily="@font/comfortaa"
+          android:gravity="center"
           android:text="@string/shoe_list"
           android:textColor="@android:color/black"
           android:textSize="25sp"
-          android:gravity="center"
-          android:fontFamily="@font/comfortaa"
-          />
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
 
       <com.google.android.material.floatingactionbutton.FloatingActionButton
           android:id="@+id/floatingActionButton"
@@ -30,31 +31,29 @@
           android:layout_height="wrap_content"
           android:layout_alignParentEnd="true"
           android:layout_alignParentBottom="true"
-          android:layout_marginRight="20dp"
-          android:layout_marginBottom="20dp"
           android:clickable="true"
           android:src="@drawable/ic_add"
-          app:backgroundTint="@color/colorButtonLogin" />
+          app:backgroundTint="@color/colorButtonLogin"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent" />
 
       <ScrollView
           android:id="@+id/shoeListScrollView"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:layout_marginStart="16dp"
-          android:layout_marginTop="28dp"
-          android:layout_marginEnd="16dp"
-          android:layout_marginBottom="16dp">
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
 
          <LinearLayout
              android:id="@+id/layout_list"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:orientation="vertical"
-             >
+             android:orientation="vertical">
 
          </LinearLayout>
 
       </ScrollView>
 
-   </RelativeLayout>
+   </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

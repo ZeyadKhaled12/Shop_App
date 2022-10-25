@@ -15,6 +15,7 @@ import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
 
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.models.Shoe
 import kotlinx.android.synthetic.main.fragment_shoe_list.view.*
 
 class ShoeListFragment : Fragment() {
@@ -56,17 +57,17 @@ class ShoeListFragment : Fragment() {
                 || super.onOptionsItemSelected(item)
     }
 
-    private fun updateShoes(listShoes: List<Map<String, String>>){
+    private fun updateShoes(listShoes: List<Shoe>){
         binding.layoutList.removeAllViews()
         listShoes.forEach{
             val layoutList: LinearLayout = binding.layoutList
             val shoe = ShoeFragment(context)
             layoutList.addView(
                 shoe.getView(
-                    it["shoe_name"],
-                    it["company"],
-                    it["shoe_size"],
-                    it["description"]
+                    it.name,
+                    it.company,
+                    it.size,
+                    it.description
                 )
             )
         }
