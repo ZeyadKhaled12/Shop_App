@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.udacity.shoestore.ShoeList.ShoeListModel
@@ -15,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_shoe_detail.view.*
 
 class ShoeDetailFragment : Fragment() {
 
-    private lateinit var viewModel: ShoeListModel
+    private  val viewModel: ShoeListModel by activityViewModels()
 
 
 
@@ -31,8 +32,6 @@ class ShoeDetailFragment : Fragment() {
             container,
             false
         )
-
-        viewModel = ViewModelProvider(this).get(ShoeListModel::class.java)
 
         binding.shoe = Shoe()
 

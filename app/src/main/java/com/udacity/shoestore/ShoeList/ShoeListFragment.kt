@@ -7,6 +7,7 @@ import android.widget.LinearLayout
 
 
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
@@ -20,7 +21,7 @@ import kotlinx.android.synthetic.main.fragment_shoe_list.view.*
 
 class ShoeListFragment : Fragment() {
 
-    lateinit var viewModel: ShoeListModel
+    private val viewModel: ShoeListModel by activityViewModels()
 
     private lateinit var binding: FragmentShoeListBinding
 
@@ -32,7 +33,6 @@ class ShoeListFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_list, container, false
         )
-        viewModel = ViewModelProvider(this).get(ShoeListModel::class.java)
 
 
         viewModel.listShoes.observe(viewLifecycleOwner,
