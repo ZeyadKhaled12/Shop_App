@@ -32,6 +32,8 @@ class ShoeDetailFragment : Fragment() {
             container,
             false
         )
+        binding.lifecycleOwner = this
+        binding.shoeListModel = viewModel
 
         binding.shoe = Shoe()
 
